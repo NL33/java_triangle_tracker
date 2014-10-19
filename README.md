@@ -1,0 +1,1 @@
+Enter sides of triangle and program categorizes the resulting triangle.
