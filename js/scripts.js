@@ -11,23 +11,23 @@ $("form#triangle-info").submit(function(event) {
 	    side2: entrySide2,
 	    side3: entrySide3,
 	    type: function(){
-			    if (((this.side1 + this.side2) <= this.side3) || ((this.side1 + this.side3) <= this.side2) || ((this.side2 + this.side3) <= this.side1)){
-				  return "notTriangle";
-			    }
+			if (((this.side1 + this.side2) <= this.side3) || ((this.side1 + this.side3) <= this.side2) || ((this.side2 + this.side3) <= this.side1)){
+				return "notTriangle";
+			}
 
-				else if ((this.side1 === this.side2) && (this.side1 === this.side2) && (this.side2 === this.side3)){
-				   return "equilateral"; 
-				} 
+			else if ((this.side1 === this.side2) && (this.side1 === this.side2) && (this.side2 === this.side3)){
+				return "equilateral"; 
+			} 
 
-				else if ((this.side1 === this.side2 && this.side1 !== this.side3) || (this.side2 === this.side3 && this.side2 !== this.side1) || (this.side3 === this.side1 && this.side3 !== this.side2)) {
-				 	return "isosceles";
-				}
+			else if ((this.side1 === this.side2 && this.side1 !== this.side3) || (this.side2 === this.side3 && this.side2 !== this.side1) || (this.side3 === this.side1 && this.side3 !== this.side2)) {
+				return "isosceles";
+			}
 
-				else if ((this.side1 !== this.side2) && (this.side2 !== this.side3) && (this.side1 !== this.side3)) {
-					return "scalene";
-			    }	
-			   }
-	    };
+			else if ((this.side1 !== this.side2) && (this.side2 !== this.side3) && (this.side1 !== this.side3)) {
+				return "scalene";
+			}	
+		}
+	 };
 
 	if (triangle.type() === "notTriangle") {
 		alert("These sides do not equal a triangle");
